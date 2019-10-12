@@ -24,7 +24,11 @@ export default ({ data }) => {
                     dangerouslySetInnerHTML={{ __html: node.description }}
                   ></div>
                 </td>
-
+                <td>
+                  {node.images.map(({ url_thumbnail }, index) => (
+                    <img key={index} src={url_thumbnail} />
+                  ))}
+                </td>
                 <td>{node.price.toFixed(2)}</td>
               </tr>
             ))}
